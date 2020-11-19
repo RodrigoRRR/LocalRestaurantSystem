@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="716.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <BorderPane prefHeight="716.0" prefWidth="800.0" />
+      <HBox layoutY="-2.0" prefHeight="183.0" prefWidth="486.0" spacing="15.0">
+         <children>
+            <VBox prefHeight="183.0" prefWidth="141.0" spacing="15.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="102.0" text="Pizzas">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="131.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="129.0" spacing="15.0">
+                           <children>
+                              <CheckBox fx:id="frangoCheckBox" mnemonicParsing="false" text="Frango" />
+                              <CheckBox fx:id="calabresaCheckBox" mnemonicParsing="false" prefHeight="17.0" prefWidth="128.0" text="Calabresa " />
+                              <CheckBox fx:id="qqueijosCheckBox" mnemonicParsing="false" text="4 Queijos" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#pizzaPedidoBotao" prefHeight="25.0" prefWidth="133.0" text="Adicionar ao Carrinho" />
+               </children>
+            </VBox>
+            <VBox prefHeight="183.0" prefWidth="186.0" spacing="10.0">
+               <children>
+                  <Label text="Tamanho">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="pequena" mnemonicParsing="false" text="Pequena  4 Pedaços - R$ 20 ">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tamanho" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="media" mnemonicParsing="false" text="Média 8 Pedaços - R$ 25" toggleGroup="$tamanho" />
+                  <RadioButton fx:id="grande" mnemonicParsing="false" text="Grande 12 Pedaços - R$ 30" toggleGroup="$tamanho" />
+               </children>
+            </VBox>
+            <VBox prefHeight="183.0" prefWidth="121.0" spacing="10.0">
+               <children>
+                  <Label text="Bordas">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font></Label>
+                  <RadioButton fx:id="semBorda" mnemonicParsing="false" text="Sem Borda">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="borda" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="cheddarBorda" mnemonicParsing="false" text="Cheddar - R$ 2" toggleGroup="$borda" />
+                  <RadioButton fx:id="catupiryBorda" mnemonicParsing="false" text="Catupiry - R$ 2" toggleGroup="$borda" />
+                  <RadioButton fx:id="chocolateBorda" mnemonicParsing="false" text="Chocolate - R$ 2" toggleGroup="$borda" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutY="183.0" prefHeight="205.0" prefWidth="352.0" spacing="10.0">
+         <children>
+            <VBox prefHeight="167.0" prefWidth="215.0" spacing="15.0">
+               <children>
+                  <Label text="Sanduiches">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="hamburguerCheckBox" mnemonicParsing="false" text="Hamburguer - R$ 20" />
+                  <CheckBox mnemonicParsing="false" text="X Tudo - R$ 20" fx:id="xTudoCheckBox" />
+                  <CheckBox fx:id="bauruCheckBox" mnemonicParsing="false" text="Bauru - R$ 20" />
+                  <Button mnemonicParsing="false" onAction="#sanduichePedidoButao" text="Adicionar ao Carrinho" />
+               </children>
+            </VBox>
+            <VBox prefHeight="321.0" prefWidth="102.0" spacing="10.0">
+               <children>
+                  <Label text="Adicionais">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="semAdd" mnemonicParsing="false" text="Sem Adicional">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="adicional" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="addQueijo" mnemonicParsing="false" text="Queijo - R$ 2" toggleGroup="$adicional" />
+                  <RadioButton fx:id="addBacon" mnemonicParsing="false" text="Bacon - R$ 2" toggleGroup="$adicional" />
+                  <RadioButton fx:id="addPicles" mnemonicParsing="false" text="Picles - R$ 2" toggleGroup="$adicional" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox layoutX="486.0" prefHeight="388.0" prefWidth="313.0">
+         <children>
+            <Label text="Carrinho">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="pizzaPedidoLabel" prefHeight="164.0" prefWidth="356.0" text="Label" />
+            <Label fx:id="sanduichePedidoLabel" prefHeight="206.0" prefWidth="320.0" text="Label" />
+         </children>
+      </VBox>
+      <HBox layoutX="-2.0" layoutY="354.0" prefHeight="283.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="334.0" prefWidth="233.0" />
+            <VBox prefHeight="321.0" prefWidth="392.0" spacing="10.0">
+               <children>
+                  <Label text="Obeservações">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="ex: sem cebola, mal passado" />
+                  <TextField fx:id="obs" prefHeight="249.0" prefWidth="392.0" />
+                  <Button mnemonicParsing="false" onAction="#confirmarObs" text="Observações" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox layoutX="-1.0" layoutY="639.0" prefHeight="77.0" prefWidth="800.0">
+         <children>
+            <VBox prefHeight="77.0" prefWidth="342.0" />
+            <VBox prefHeight="77.0" prefWidth="203.0">
+               <children>
+                  <VBox prefHeight="27.0" prefWidth="100.0" />
+                  <Button mnemonicParsing="false" onAction="#confirmarPedido" text="Confirmar Pedido" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
